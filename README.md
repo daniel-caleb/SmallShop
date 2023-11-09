@@ -41,5 +41,10 @@ The application is designed to simplify the sales process for small shops. Users
 ## Author
 Daniel-Caleb Ronoh - *Cyber security Enthusiast*
 
+## Collaborators
+- Ken.
+- Muthoni.
+- Kipng'etich Aron.
+
 ## License
 This project is licensed under the MIT License.
