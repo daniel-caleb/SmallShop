@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         button=findViewById(R.id.button);
         button2=findViewById(R.id.button2);
         button3=findViewById(R.id.button3);
@@ -38,5 +39,7 @@ public class MainActivity extends AppCompatActivity {
         editTextText13=findViewById(R.id.editTextText13);
         editTextText14=findViewById(R.id.editTextText14);
         editTextText15=findViewById(R.id.editTextText15);
+
+
     }
 }

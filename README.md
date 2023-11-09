@@ -25,3 +25,21 @@ The application is designed to simplify the sales process for small shops. Users
 
    ```bash
    git clone https://github.com/daniel-caleb/SmallShop.git
+
+## Code Structure
+
+- *MainActivity.java*: Contains the main logic for item quantities, total price, and discount application.
+- *activity_main.xml*: Defines the UI layout.
+
+
+## Additional Notes
+
+- Feel free to customize the item prices and quantities limits in the source code.
+- Enhancements can be made for inventory management, payment processing, and more.
+
+
+## Author
+Daniel-Caleb Ronoh - *Cyber security Enthusiast*
+
+## License
+This project is licensed under the MIT License.
