@@ -1,10 +1,10 @@
 # Sales Automation Android App
 
-This Android application automates sales in a small shop. The app allows users to select items, specify quantities, and calculates the total price. Additionally, a 15% discount is applied if the grand total exceeds $10,000.
+This Android application automates sales in a small shop. The app allows users to select items, specify quantities, and calculates the total price. Additionally, a 15% discount is applied if the grand total exceeds Kshs.10,000.
 
 ## Overview
 
-The application is designed to simplify the sales process for small shops. Users can easily add items to their purchase, specify quantities, and view the total price. The inclusion of a discount feature encourages larger purchases, providing a 15% discount for orders exceeding $10,000.
+The application is designed to simplify the sales process for small shops. Users can easily specify quantities of items of their purchase and view the total price. The inclusion of a discount feature encourages larger purchases, providing a 15% discount for orders exceeding Kshs.10,000.
 
 ## Features
 
@@ -28,8 +28,8 @@ The application is designed to simplify the sales process for small shops. Users
 
 ## Code Structure
 
-- *MainActivity.java*: Contains the main logic for item quantities, total price, and discount application.
-- *activity_main.xml*: Defines the UI layout.
+-  *MainActivity.java*:  Contains the main logic for item quantities, total price, and discount application.
+-  *activity_main.xml*:  Defines the UI layout.
 
 
 ## Additional Notes
@@ -39,12 +39,11 @@ The application is designed to simplify the sales process for small shops. Users
 
 
 ## Author
-Daniel-Caleb Ronoh - *Cyber security Enthusiast*
-
-## Collaborators
+- Daniel-Caleb Ronoh - *Cyber security Enthusiast*
 - Ken.
 - Muthoni.
 - Kipng'etich Aron.
+
 
 ## License
 This project is licensed under the MIT License.
