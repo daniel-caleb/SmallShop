@@ -39,7 +39,7 @@ The application is designed to simplify the sales process for small shops. Users
 
 
 ## Author
-- Daniel-Caleb Ronoh - *Cyber security Enthusiast*
+- Daniel-Caleb
 - Ken.
 - Muthoni.
 - Kipng'etich Aron.
