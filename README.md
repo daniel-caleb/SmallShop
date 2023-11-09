@@ -24,4 +24,4 @@ The application is designed to simplify the sales process for small shops. Users
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/daniel-caleb/sales-automation-app.git
+   git clone https://github.com/daniel-caleb/SmallShop.git
