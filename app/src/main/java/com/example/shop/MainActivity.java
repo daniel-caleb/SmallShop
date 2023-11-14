@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private static final int MAX_QUANTITY = 4;
@@ -82,37 +83,105 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Calculate Grand Total and update EditText view
+                double grandTotal = calculateGrandTotal();
+                editTextText13.setText("Kshs." + String.format("%.2f", grandTotal));
+            }
+        });
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Calculate Discount and update EditText view
+                double grandTotal = calculateGrandTotal();
+                double discount = calculateDiscount(grandTotal);
+                editTextText14.setText("Kshs." + String.format("%.2f", discount));
+            }
+        });
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Calculate Net Pay and update EditText view
+                double grandTotal = calculateGrandTotal();
+                double discount = calculateDiscount(grandTotal);
+                double netPay = grandTotal - discount;
+                editTextText15.setText("Kshs." + String.format("%.2f", netPay));
+            }
+        });
     }
 
     private void updateMilkPrice() {
-        double totalPrice = itemMilkCount * getPriceForItem("Milk");
-        editTextText.setText("Kshs." + String.format("%.2f", totalPrice));
+        double itemMilkPrice = itemMilkCount * getPriceForItem("Milk");
+        double vat = 0.16 * itemMilkPrice;
+        double actualPrice = itemMilkPrice - vat;
+        editTextText.setText("Kshs." + String.format("%.2f", itemMilkPrice));
+        editTextText2.setText("KES." + String.format("%.2f", vat));
+        editTextText3.setText("Kshs." + String.format("%.2f", actualPrice));
+
     }
     private void updateSugarPrice() {
-        double totalPrice = itemSugarCount * getPriceForItem("Sugar");
-        editTextText4.setText("Kshs." + String.format("%.2f", totalPrice));
+        double itemSugarPrice = itemSugarCount * getPriceForItem("Sugar");
+        double vat = 0.16 * itemSugarPrice;
+        double actualPrice = itemSugarPrice - vat;
+        editTextText4.setText("Kshs." + String.format("%.2f", itemSugarPrice));
+        editTextText5.setText("KES." + String.format("%.2f", vat));
+        editTextText6.setText("Kshs." + String.format("%.2f", actualPrice));
     }
     private void updateFlourPrice() {
-        double totalPrice = itemFlourCount * getPriceForItem("Flour");
-        editTextText10.setText("Kshs." + String.format("%.2f", totalPrice));
+        double itemFlourPrice = itemFlourCount * getPriceForItem("Flour");
+        double vat = 0.16 * itemFlourPrice;
+        double actualPrice = itemFlourPrice - vat;
+        editTextText10.setText("Kshs." + String.format("%.2f", itemFlourPrice));
+        editTextText8.setText("KES." + String.format("%.2f", vat));
+        editTextText9.setText("Kshs." + String.format("%.2f", actualPrice));
     }
     private void updateBreadPrice() {
-        double totalPrice = itemBreadCount * getPriceForItem("Bread");
-        editTextText7.setText("Kshs." + String.format("%.2f", totalPrice));
+        double itemBreadPrice = itemBreadCount * getPriceForItem("Bread");
+        double vat = 0.16 * itemBreadPrice;
+        double actualPrice = itemBreadPrice - vat;
+        editTextText7.setText("Kshs." + String.format("%.2f", itemBreadPrice));
+        editTextText11.setText("KES." + String.format("%.2f", vat));
+        editTextText12.setText("Kshs." + String.format("%.2f", actualPrice));
+    }
+    private double calculateGrandTotal() {;
+        // Sum up the Actual Price for all items
+        double grandTotal = getPriceForItem("Milk")
+                + getPriceForItem("Sugar")
+                + getPriceForItem("Flour")
+                + getPriceForItem("Bread");
+
+        return grandTotal;
+    }
+
+    private double calculateDiscount(double grandTotal) {
+        // Apply a 15% discount if the Grand Total exceeds 10,000
+        if (grandTotal > 10000) {
+            return 0.15 * grandTotal;
+        } else {
+            // No discount
+            showToast("No discount awarded.");
+            return 0;
+        }
     }
 
     private double getPriceForItem(String itemName) {
         switch (itemName) {
             case "Milk":
-                return 60.00;
+                return 71.43;
             case "Sugar":
-                return 240.00;
+                return 285.72;
             case "Flour":
-                return 130.00;
+                return 154.77;
             case "Bread":
-                return 65.00;
+                return 77.40;
             default:
                 return 0.00;
         }
     }
-}
+
+    private void showToast(String s) {
+        Toast.makeText(this, "Thank You For Shopping With Us!", Toast.LENGTH_SHORT).show();
+    }
+    }
