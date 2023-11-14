@@ -12,7 +12,10 @@ public class MainActivity extends AppCompatActivity {
     Button button,button2,button3,button4,button5,button6,button7;
     EditText editTextText,editTextText2,editTextText3,editTextText4,editTextText5,editTextText6,editTextText7,editTextText8,editTextText9;
     EditText editTextText10,editTextText11,editTextText12,editTextText13,editTextText14,editTextText15;
-    private int itemCount = 0;
+    private int itemMilkCount = 0;
+    private int itemSugarCount = 0;
+    private int itemFlourCount = 0;
+    private int itemBreadCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,17 +49,56 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (itemCount < MAX_QUANTITY) {
-                    itemCount++;
-                    updateTotalPrice();
+                if (itemMilkCount < MAX_QUANTITY) {
+                    itemMilkCount++;
+                    updateMilkPrice();
                 }                
+            }
+        });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (itemSugarCount < MAX_QUANTITY) {
+                    itemSugarCount++;
+                    updateSugarPrice();
+                }
+            }
+        });
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (itemFlourCount < MAX_QUANTITY) {
+                    itemFlourCount++;
+                    updateFlourPrice();
+                }
+            }
+        });
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (itemBreadCount < MAX_QUANTITY) {
+                    itemBreadCount++;
+                    updateBreadPrice();
+                }
             }
         });
     }
 
-    private void updateTotalPrice() {
-        double totalPrice = itemCount * getPriceForItem("Milk");
+    private void updateMilkPrice() {
+        double totalPrice = itemMilkCount * getPriceForItem("Milk");
         editTextText.setText("Kshs." + String.format("%.2f", totalPrice));
+    }
+    private void updateSugarPrice() {
+        double totalPrice = itemSugarCount * getPriceForItem("Sugar");
+        editTextText4.setText("Kshs." + String.format("%.2f", totalPrice));
+    }
+    private void updateFlourPrice() {
+        double totalPrice = itemFlourCount * getPriceForItem("Flour");
+        editTextText10.setText("Kshs." + String.format("%.2f", totalPrice));
+    }
+    private void updateBreadPrice() {
+        double totalPrice = itemBreadCount * getPriceForItem("Bread");
+        editTextText7.setText("Kshs." + String.format("%.2f", totalPrice));
     }
 
     private double getPriceForItem(String itemName) {
