@@ -169,13 +169,13 @@ public class MainActivity extends AppCompatActivity {
     private double getPriceForItem(String itemName) {
         switch (itemName) {
             case "Milk":
-                return 71.43;
+                return 50.00;
             case "Sugar":
-                return 285.72;
+                return 200.00;
             case "Flour":
-                return 154.77;
+                return 105.00;
             case "Bread":
-                return 77.40;
+                return 50;
             default:
                 return 0.00;
         }
