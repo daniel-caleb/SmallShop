@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
     private void updateMilkPrice() {
         double itemMilkPrice = itemMilkCount * getPriceForItem("Milk");
         double vat = 0.16 * itemMilkPrice;
-        double actualPrice = itemMilkPrice - vat;
+        double actualPrice = itemMilkPrice + vat;
         editTextText.setText("Kshs." + String.format("%.2f", itemMilkPrice));
         editTextText2.setText("KES." + String.format("%.2f", vat));
         editTextText3.setText("Kshs." + String.format("%.2f", actualPrice));
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
     private void updateSugarPrice() {
         double itemSugarPrice = itemSugarCount * getPriceForItem("Sugar");
         double vat = 0.16 * itemSugarPrice;
-        double actualPrice = itemSugarPrice - vat;
+        double actualPrice = itemSugarPrice + vat;
         editTextText4.setText("Kshs." + String.format("%.2f", itemSugarPrice));
         editTextText5.setText("KES." + String.format("%.2f", vat));
         editTextText6.setText("Kshs." + String.format("%.2f", actualPrice));
@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
     private void updateFlourPrice() {
         double itemFlourPrice = itemFlourCount * getPriceForItem("Flour");
         double vat = 0.16 * itemFlourPrice;
-        double actualPrice = itemFlourPrice - vat;
+        double actualPrice = itemFlourPrice + vat;
         editTextText10.setText("Kshs." + String.format("%.2f", itemFlourPrice));
         editTextText8.setText("KES." + String.format("%.2f", vat));
         editTextText9.setText("Kshs." + String.format("%.2f", actualPrice));
@@ -140,17 +140,17 @@ public class MainActivity extends AppCompatActivity {
     private void updateBreadPrice() {
         double itemBreadPrice = itemBreadCount * getPriceForItem("Bread");
         double vat = 0.16 * itemBreadPrice;
-        double actualPrice = itemBreadPrice - vat;
+        double actualPrice = itemBreadPrice + vat;
         editTextText7.setText("Kshs." + String.format("%.2f", itemBreadPrice));
         editTextText11.setText("KES." + String.format("%.2f", vat));
         editTextText12.setText("Kshs." + String.format("%.2f", actualPrice));
     }
     private double calculateGrandTotal() {;
         // Sum up the Actual Price for all items
-        double grandTotal = getPriceForItem("Milk")
-                + getPriceForItem("Sugar")
-                + getPriceForItem("Flour")
-                + getPriceForItem("Bread");
+        int grandTotal = (int) ((itemMilkCount * getPriceForItem("Milk"))
+                        + (itemSugarCount * getPriceForItem("Sugar"))
+                        + (itemFlourCount * getPriceForItem("Flour"))
+                        + (itemBreadCount * getPriceForItem("Bread")));
 
         return grandTotal;
     }
